@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <title>Add New Blog</title>
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+        <form action="/blog" method="POST" enctype="multipart/form-data"
+            style="max-width: 500px; margin: 20px auto; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); padding: 20px; border-radius: 8px; background: white;">
+            <div class="mb-3">
+                <label for="title" style="font-weight: bold; margin-bottom: 5px;">Title</label>
+                <input type="text"
+                    style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"
+                    class="form-control" id="title" name="title" required>
+            </div>
+            <div class="mb-3">
+                <label for="body" style="font-weight: bold; margin-bottom: 5px;">Body</label>
+                <textarea
+                    style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"
+                    class="form-control" id="body" name="body" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="coverImage" style="font-weight: bold; margin-bottom: 5px;">Cover Image</label>
+                <input type="file"
+                    style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"
+                    class="form-control" id="coverImage" name="coverImage">
+            </div>
+            <button type="submit"
+                style="background-color: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;"
+                class="btn btn-primary">Submit</button>
+        </form>
+        <%- include('./partials/scripts') %>
+</body>
+
+</html>

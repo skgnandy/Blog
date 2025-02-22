@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <title>Signin</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f9;
+                color: #333;
+                margin: 0;
+                padding: 0;
+            }
+
+            .container {
+                max-width: 400px;
+                /* Decreased from 600px */
+                margin: 50px auto;
+                padding: 20px;
+                background-color: white;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .form-label {
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+
+            .form-control {
+                padding: 10px;
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+            .form-text {
+                font-size: 0.875em;
+                color: #666;
+            }
+
+            .form-check-label {
+                margin-left: 5px;
+            }
+
+            button {
+                cursor: pointer;
+                background-color: #0056b3;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 4px;
+                transition: background-color 0.3s;
+            }
+
+            button:hover {
+                background-color: #004085;
+            }
+        </style>
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+        <div class="container">
+            <form action="/user/signin" method="post">
+                <div class="mb-3">
+                    <label for="emailAddress" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="emailAddress" name="emailAddress"
+                        aria-describedby="emailHelp" required>
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input name="password" type="password" class="form-control" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <%- include('./partials/scripts') %>
+</body>
+
+</html>
