@@ -1,4 +1,3 @@
-Here is your **direct copy-paste README.md file** (just copy everything below and paste into `README.md`) 👇
 
 ---
 
